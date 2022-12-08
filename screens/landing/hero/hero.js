@@ -6,7 +6,7 @@ import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 const Hero = () => {
   return (
     <main className={`${styles.heroWrap} flex justify-center`}>
-      <div className={`w-[75%]`}>
+      <div className={`w-[75%] max-w-[1300px]`}>
         <div
           className={`flex w-full justify-between ${styles.heroBox} pt-3 pb-4`}
         >
