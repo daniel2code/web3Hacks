@@ -1,0 +1,9 @@
+.wrapper {
+  background-image: url("../../assets/crypto.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 140px;
+  background-color: rgba(0 0 0 / 0.5);
+  background-blend-mode: multiply;
+}

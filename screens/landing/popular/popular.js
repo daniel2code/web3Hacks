@@ -31,7 +31,7 @@ const Popular = () => {
             className={`w-[45%] pl-[25px] border border-y-0 border-r-0 border-l-gray-400`}
           >
             <div className="flex flex-col gap-y-[25px]">
-              {[...Array(7)].map((item) => {
+              {[...Array(6)].map((item) => {
                 return <SecondaryCard />;
               })}
             </div>

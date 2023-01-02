@@ -7,11 +7,11 @@ import Subscribe from "../../components/subscribe/subscribe";
 import Footer from "../../components/footer/footer";
 import Socials from "../../components/socials/socials";
 
-const Blog = () => {
+const Trending = () => {
   return (
     <div>
       <Navbar />
-      <ImgT title="Blockchain News" />
+      <ImgT title="Trending Blockchain News" />
       <PostWrapper>
         {[...Array(6)].map((item, ind, arr) => {
           return (
@@ -29,4 +29,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default Trending;
