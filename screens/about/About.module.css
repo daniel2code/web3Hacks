@@ -1,0 +1,16 @@
+.wrapper {
+    background-image: url("../../assets/about.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 300px;
+    width: 100%;
+    background-color: rgba(0 0 0 / 0.5);
+    background-blend-mode: multiply;
+  }
+
+  @media screen and (max-width: 480px){
+    .wrapper{
+        height: 200px;
+    }
+  }
