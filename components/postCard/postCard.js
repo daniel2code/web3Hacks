@@ -22,6 +22,7 @@ const PostCard = ({ hideBorder }) => {
           height="100px"
           width="100%"
           layout="responsive"
+          alt="blog post image"
         />
       </div>
 

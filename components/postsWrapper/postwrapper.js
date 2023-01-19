@@ -11,8 +11,8 @@ const Postwrapper = ({ children }) => {
             <h2 className="text-center mb-4 font-semibold text-[17px ]">
               Latest Posts
             </h2>
-            {[...Array(5)].map((item) => {
-              return <SecondaryCard />;
+            {[...Array(5)].map((item, i) => {
+              return <SecondaryCard key={i} />;
             })}
           </div>
         </div>

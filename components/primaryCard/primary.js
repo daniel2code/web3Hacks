@@ -9,6 +9,7 @@ const Primary = () => {
           src={require("../../assets/btcc.jpg")}
           height="100%"
           width="100%"
+          alt="blog post image"
         />
       </div>
 

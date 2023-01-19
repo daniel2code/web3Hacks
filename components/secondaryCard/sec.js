@@ -12,6 +12,7 @@ const Sec = () => {
           // alt="blog post image"
           layout="fill"
           className={"image"}
+          alt="blog post image"
         />
       </div>
 
