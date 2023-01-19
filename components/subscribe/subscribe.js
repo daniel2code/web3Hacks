@@ -21,7 +21,7 @@ const Subscribe = () => {
               </div>
               <div className="flex mt-2 gap-x-2">
                 <input type="checkbox" className="bg-white" />
-                <p className="text-[13px]">
+                <p className="text-[13px] text-[#000]">
                   I will like to receive news and special offers
                 </p>
               </div>
