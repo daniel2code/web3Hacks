@@ -14,10 +14,10 @@ const Primary = () => {
       </div>
 
       <div className="p-5 mt-4">
-        <h2 className="text-[19px] leading-[23px] font-medium">
+        <h2 className="text-[19px] leading-[23px] text-[#000] font-medium">
           How to Look Good Straight After a Major Workout
         </h2>
-        <p className="text-[12px] mt-3">By Daniel Star</p>
+        <p className="text-[12px] mt-3 text-[#000]">By Daniel Star</p>
       </div>
     </div>
   );

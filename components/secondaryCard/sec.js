@@ -17,11 +17,11 @@ const Sec = () => {
       </div>
 
       <div className="w-[calc(100%-110px)] pb-[15px] lg:pb-0">
-        <h3 className="text-[13px] sm:text-[14px]  font-semibold leading-[17px]">
+        <h3 className="text-[13px] sm:text-[14px] text-[#000] font-semibold leading-[17px]">
           What to Wear to a Taylor Swift Concert, According to Gigi Hadid
         </h3>
 
-        <p className="text-[11px] sm:text-[12px] mt-2 leading-[14px]">
+        <p className="text-[11px] sm:text-[12px] text-[#000] mt-2 leading-[14px]">
           There are many elements of Charlotte D’Alessio’s life that read like a
           teenager’s fairy tale.…
         </p>

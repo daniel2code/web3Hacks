@@ -28,7 +28,7 @@ const Article = () => {
 
       <div className="w-full flex justify-center mt-6">
         <div className={`w-[67%] max-w-[1100px]`}>
-          <p className="mt-3 text-[15px]">
+          <p className="mt-3 text-[15px] text-[#000]">
             There are many elements of Charlotte D’Alessio’s life that read like
             a teenager’s fairy tale. Instagram didn’t exist when I was in high
             school, but I imagine I’d be pretty fascinated by the beautiful,
@@ -39,7 +39,7 @@ const Article = () => {
             conventional.
           </p>
 
-          <p className="mt-3 text-[15px]">
+          <p className="mt-3 text-[15px] text-[#000]">
             At Coachella in 2015, pictures of D’Alessio (above, right) and her
             friend, 18-year-old model Josie Canseco (left), flooded the
             Internet, winding up on places like the festival’s official Twitter
@@ -55,7 +55,7 @@ const Article = () => {
             pantheon will only deepen.
           </p>
 
-          <p className="mt-3 text-[15px]">
+          <p className="mt-3 text-[15px] text-[#000]">
             I went with my friend Josie — it was my first year going — and we
             barely took photos. I think we took 10 photos, but people really
             responded to them. They ended up everywhere. I saw them on Facebook,

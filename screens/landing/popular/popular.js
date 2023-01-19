@@ -8,19 +8,21 @@ const Popular = () => {
     <div className={`w-full flex justify-center py-[70px]`}>
       <div className={`xl:w-[75%] w-full max-w-[1300px] px-[5%] xl:px-[0%]`}>
         <div className={`${styles.popBox} pb-[15px]`}>
-          <p className={`text-[12px]`}>Based on</p>
-          <h2 className={`text-[35px] leading-[35px]`}>Popularity</h2>
+          <p className={`text-[12px] text-[#000]`}>Based on</p>
+          <h2 className={`text-[35px] leading-[35px] text-[#000]`}>
+            Popularity
+          </h2>
         </div>
 
         <div className="mt-6 flex items-start gap-x-[20px] flex-col lg:flex-row ">
           <div className={`lg:w-[55%] w-full`}>
             <div className="w-full">
               <Image src={require("../../../assets/btcc.jpg")} />
-              <p className="text-[12px] mt-5">APRIL 23, 2016</p>
-              <h1 className="text-[23px] md:text-[33px] mt-2 md:leading-[38px] leading-[28px] ">
+              <p className="text-[12px] mt-5 text-[#000]">APRIL 23, 2016</p>
+              <h1 className="text-[23px] md:text-[33px] mt-2 md:leading-[38px] leading-[28px] text-[#000]">
                 The Backstage Fix For Skin That Is Not Quite So Perfect
               </h1>
-              <p className="mt-4 text-[15px] sm:text-[16px]">
+              <p className="mt-4 text-[15px] sm:text-[16px] text-[#000]">
                 There are many elements of Charlotte D’Alessio’s life that read
                 like a teenager’s fairy tale. Instagram didn’t exist when I was
                 in high school, but I imagine I’d be pretty fascinated by…

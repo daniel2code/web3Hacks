@@ -7,8 +7,12 @@ const Trends = () => {
       <div className="w-full flex justify-center">
         <div className="lg:w-[75%] w-full ">
           <div className={`pb-[15px]`}>
-            <p className={`text-[12px] text-center`}>Based on</p>
-            <h2 className={`text-[35px] leading-[35px] text-center`}>Trends</h2>
+            <p className={`text-[12px] text-[#000] text-center`}>Based on</p>
+            <h2
+              className={`text-[35px] leading-[35px] text-[#000] text-center`}
+            >
+              Trends
+            </h2>
           </div>
         </div>
       </div>
