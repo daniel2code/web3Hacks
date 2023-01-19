@@ -19,7 +19,7 @@ const Article = () => {
             <div className={`w-[25px] border border-gray-200 border-t-0`} />
             <p className="text-[12px] text-white">December 31, 2023</p>
           </div>
-          <h2 className="text-white text-[37px] font-bold w-[60%] text-center max-w-[800px] mt-3">
+          <h2 className="text-white text-[27px] sm:text-[37px] font-bold px-[5%] md:px-0 w-full  md:w-[60%] text-center max-w-[800px] mt-3">
             What is Trending in the Ethereum Ecosystem, Everything You Need to
             Know.
           </h2>
@@ -27,7 +27,7 @@ const Article = () => {
       </div>
 
       <div className="w-full flex justify-center mt-6">
-        <div className={`w-[67%] max-w-[1100px]`}>
+        <div className={`w-full px-[5%] md:px-0 md:w-[67%] max-w-[1100px]`}>
           <p className="mt-3 text-[15px] text-[#000]">
             There are many elements of Charlotte D’Alessio’s life that read like
             a teenager’s fairy tale. Instagram didn’t exist when I was in high
