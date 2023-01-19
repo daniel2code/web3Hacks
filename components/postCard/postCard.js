@@ -27,16 +27,16 @@ const PostCard = ({ hideBorder }) => {
 
       <div className={`${checkView ? "w-full" : "w-[90%]"}`}>
         <div
-          className={`flex gap-x-2 items-center ${
-            checkView ? "mt-5" : "mt-0"
-          }`}
+          className={`flex gap-x-2 items-center ${checkView ? "mt-5" : "mt-0"}`}
         >
           <p className="text-[12px] font-medium">Testnet</p>{" "}
           <div className={`w-[25px] border border-gray-200 border-t-0`} />
           <p className="text-[11px]">December 31, 2023</p>
         </div>
 
-        <h2 className={`text-[27px] my-2 leading-[32px]`}>
+        <h2
+          className={`sm:text-[27px] text-[20px] my-2 leading-[25px] sm:leading-[32px]`}
+        >
           Ethereum testnet guildlines.
         </h2>
         <p className={`text-[14px] ${checkView ? "my-4" : "my-0"}`}>

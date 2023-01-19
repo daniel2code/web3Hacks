@@ -4,9 +4,9 @@ const Subscribe = () => {
   return (
     <div className="bg-[#e2f7fa] py-[50px] mt-[70px]">
       <div className="w-full flex justify-center">
-        <div className="w-[75%] flex justify-center items-center gap-x-[20px]">
+        <div className="w-[100%] px-[5%] lg:w-[75%] flex justify-center flex-col md:flex-row items-center gap-x-[20px]">
           <p className="mb-[25px] text-[15px] font-medium">Subscribe Today</p>
-          <div className="ml-[20px]">
+          <div className="md:ml-[20px] ml-0">
             <form className="">
               <div className="flex items-center gap-x-3">
                 <input

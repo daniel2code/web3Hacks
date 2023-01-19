@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -12,6 +13,9 @@ module.exports = {
       // => @media (min-width: 640px) { ... }
 
       md: "600px",
+      // => @media (min-width: 768px) { ... }
+
+      xmd: "750px",
       // => @media (min-width: 768px) { ... }
 
       lg: "900px",

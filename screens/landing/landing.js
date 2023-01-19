@@ -11,10 +11,10 @@ const Landing = () => {
     <>
       <Hero />
       <Popular />
-      {/* <Trends /> */}
-      {/* <Subscribe /> */}
-      {/* <Socials /> */}
-      {/* <Footer /> */}
+      <Trends />
+      <Subscribe />
+      <Socials />
+      <Footer />
     </>
   );
 };

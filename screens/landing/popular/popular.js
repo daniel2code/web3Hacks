@@ -20,7 +20,7 @@ const Popular = () => {
               <h1 className="text-[23px] md:text-[33px] mt-2 md:leading-[38px] leading-[28px] ">
                 The Backstage Fix For Skin That Is Not Quite So Perfect
               </h1>
-              <p className="mt-4">
+              <p className="mt-4 text-[15px] sm:text-[16px]">
                 There are many elements of Charlotte D’Alessio’s life that read
                 like a teenager’s fairy tale. Instagram didn’t exist when I was
                 in high school, but I imagine I’d be pretty fascinated by…
@@ -30,7 +30,7 @@ const Popular = () => {
           <div
             className={`lg:w-[45%] w-full mt-[50px] lg:mt-0 pl-[0px] lg:pl-[25px] border border-y-0 border-r-0 border-l-0 md:border-l-gray-400`}
           >
-            <div className="flex flex-col gap-y-[25px]">
+            <div className="flex flex-col gap-y-[20px] md:gap-y-[25px]">
               {[...Array(6)].map((item) => {
                 return <SecondaryCard />;
               })}
