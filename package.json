@@ -10,12 +10,16 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
+    "@sanity/client": "^4.0.1",
+    "draft-js": "^0.11.7",
     "eslint": "8.29.0",
     "eslint-config-next": "13.0.6",
     "next": "13.0.6",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-draft-wysiwyg": "^1.15.0",
     "react-icons": "^4.7.1",
+    "react-quill": "^2.0.0",
     "react-redux": "^8.0.5"
   },
   "devDependencies": {
