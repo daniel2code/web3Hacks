@@ -13,6 +13,11 @@ const Sidebar = () => {
           {" "}
           <Link href="/admin/write">Write</Link>
         </p>
+
+        <p className="pl-[22%] font-semibold cursor-pointer">
+          {" "}
+          <Link href="/admin/manage">Manage Post</Link>
+        </p>
       </div>
     </div>
   );
