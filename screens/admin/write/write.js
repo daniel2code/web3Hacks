@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import Wrapper from "../wrapper/wrapper";
-import { Editor } from "react-draft-wysiwyg";
+// import { Editor } from "react-draft-wysiwyg";
+
+const Editor = dynamic(
+  () => import("react-draft-wysiwyg").then((mod) => mod.Editor),
+  {
+    ssr: false,
+  }
+);
 import { EditorState } from "draft-js";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
