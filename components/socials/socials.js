@@ -8,12 +8,12 @@ import {
 } from "react-icons/bs";
 
 const socialsBox = [
-  { name: "Facebook", icon: <BsFacebook color="black" /> },
-  { name: "Twitter", icon: <BsTwitter color="black" /> },
-  { name: "Instagram", icon: <BsInstagram color="black" /> },
-  { name: "Telegram", icon: <BsTelegram color="black" /> },
-  { name: "Facebook", icon: <BsFacebook color="black" /> },
-  { name: "Youtube", icon: <BsYoutube color="black" /> },
+  { name: "Facebook", icon: <BsFacebook color="#fff" /> },
+  { name: "Twitter", icon: <BsTwitter color="#fff" /> },
+  { name: "Instagram", icon: <BsInstagram color="#fff" /> },
+  { name: "Telegram", icon: <BsTelegram color="#fff" /> },
+  { name: "Facebook", icon: <BsFacebook color="#fff" /> },
+  { name: "Youtube", icon: <BsYoutube color="#fff" /> },
 ];
 
 const Socials = () => {
@@ -27,7 +27,7 @@ const Socials = () => {
               key={i}
             >
               {item.icon}
-              <p className="text-[14px] text-[#000] font-normal">{item.name}</p>
+              <p className="text-[14px] text-[#fff] font-normal">{item.name}</p>
             </div>
           );
         })}

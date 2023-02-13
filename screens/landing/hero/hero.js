@@ -51,7 +51,7 @@ const Hero = () => {
         </div> */}
 
         <div className={`w-full pt-[105px]`}>
-          <h4 className={`text-white text-[12px]`}>Blockchain</h4>
+          <h4 className={`text-[#ff5f13] font-bold text-[12px]`}>Blockchain</h4>
           <h2
             className={`md:text-[45px] text-[35px] leading-[44px] md:leading-[52px] mt-4 text-white max-w-[100%] lg:max-w-[85%] xl:max-w-[60%]`}
           >
@@ -59,12 +59,12 @@ const Hero = () => {
           </h2>
 
           <div className="flex gap-4 mt-[120px]">
-            <button className="p-5 bg-white rounded">
-              <MdArrowBackIos color="black" />
+            <button className="p-5 bg-[#ff5f13] rounded">
+              <MdArrowBackIos color="white" />
             </button>
 
-            <button className="p-5 bg-white rounded">
-              <MdArrowForwardIos color="black" />
+            <button className="p-5 bg-[#ff5f13] rounded">
+              <MdArrowForwardIos color="white" />
             </button>
           </div>
         </div>

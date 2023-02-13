@@ -8,14 +8,14 @@ import Footer from "../../components/footer/footer";
 
 const Landing = () => {
   return (
-    <>
+    <div className="bg-[#121212]" >
       <Hero />
       <Popular />
       <Trends />
       <Subscribe />
       <Socials />
       <Footer />
-    </>
+    </div>
   );
 };
 

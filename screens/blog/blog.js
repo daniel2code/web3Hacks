@@ -6,8 +6,25 @@ import PostCard from "../../components/postCard/postCard";
 import Subscribe from "../../components/subscribe/subscribe";
 import Footer from "../../components/footer/footer";
 import Socials from "../../components/socials/socials";
+import { useQuery } from "react-query";
+import axios from "axios"
 
 const Blog = () => {
+  const { data, error, isError, isLoading } = useQuery("users", fetchPosts);
+
+  async function fetchPosts() {
+    const { data } = await axios.get(
+      "https://quiclet.urbandesignsco.com/api/admin/articles"
+    );
+    return data;
+  }
+
+  if (isError) {
+    return <div>Error! {error.message}</div>;
+  }
+
+  console.log(data)
+
   return (
     <div>
       <Navbar />
