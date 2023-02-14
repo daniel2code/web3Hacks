@@ -17,9 +17,9 @@ const Navbar = ({ bg }) => {
     setMenu((prev) => !prev);
   };
 
-  const bgColor = bg === true ? "bg-transparent" : "bg-white";
-  const navText = bg ? "text-white" : "text-black";
-  const iconColor = bg ? "white" : "black";
+  const bgColor = bg === true ? "bg-transparent" : "bg-[#181d20]";
+  const navText = bg ? "text-white" : "text-[#c2c3c7]";
+  const iconColor = bg ? "white" : "#c2c3c7";
 
   return (
     <div className={`w-full flex justify-center fixed ${bgColor} z-10`}>

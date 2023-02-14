@@ -18,11 +18,11 @@ const Popular = () => {
           <div className={`lg:w-[55%] w-full`}>
             <div className="w-full">
               <Image src={require("../../../assets/btcc.jpg")} />
-              <p className="text-[12px] mt-5 text-[#fff]">APRIL 23, 2016</p>
+              <p className="text-[12px] mt-5 text-[#c2c3c7]">APRIL 23, 2016</p>
               <h1 className="text-[23px] md:text-[33px] mt-2 md:leading-[38px] leading-[28px] text-[#fff]">
                 The Backstage Fix For Skin That Is Not Quite So Perfect
               </h1>
-              <p className="mt-4 text-[15px] sm:text-[16px] text-[#fff]">
+              <p className="mt-4 text-[15px] sm:text-[16px] text-[#c2c3c7]">
                 There are many elements of Charlotte D’Alessio’s life that read
                 like a teenager’s fairy tale. Instagram didn’t exist when I was
                 in high school, but I imagine I’d be pretty fascinated by…

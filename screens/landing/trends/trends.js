@@ -18,7 +18,7 @@ const Trends = () => {
       </div>
 
       <div className="w-full mt-6">
-        <div className="flex gap-x-[15px] w-[100%] overflow-x-scroll px-[5%] lg:px-0">
+        <div className="flex gap-x-[15px] w-[100%] overflow-x-scroll px-[5%] lg:px-0 scroll-style">
           {[...Array(8)].map((item) => {
             return <PrimaryCard />;
           })}

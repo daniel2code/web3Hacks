@@ -19,14 +19,14 @@ const Blog = () => {
     return data;
   }
 
-  if (isError) {
-    return <div>Error! {error.message}</div>;
-  }
+  // if (isError) {
+  //   return <div>Error! {error.message}</div>;
+  // }
 
   console.log(data)
 
   return (
-    <div>
+    <div style={{backgroundColor: "#181d20"}} >
       <Navbar />
       <ImgT title="Blockchain News" />
       <PostWrapper>
@@ -39,8 +39,8 @@ const Blog = () => {
           );
         })}
       </PostWrapper>
-      <Socials />
       <Subscribe />
+      <Socials /> 
       <Footer />
     </div>
   );

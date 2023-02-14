@@ -8,7 +8,7 @@ import Footer from "../../components/footer/footer";
 
 const Landing = () => {
   return (
-    <div className="bg-[#121212]" >
+    <div className="bg-[#181d20]" >
       <Hero />
       <Popular />
       <Trends />

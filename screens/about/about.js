@@ -5,7 +5,7 @@ import Footer from "../../components/footer/footer";
 
 const About = () => {
   return (
-    <>
+    <div style={{backgroundColor: "#181d20"}} >
       <Navbar />
       <div className="w-full flex justify-center pt-[55px] md:pt-[105px]">
         <div
@@ -18,11 +18,11 @@ const About = () => {
       </div>
       <div className="w-full flex justify-center px-[5%] mt-[50px]">
         <div className="flex justify-between xl:w-[85%] w-full max-w-[1200px] lg:flex-row flex-col ">
-          <h2 className="text-black text-[20px]">About page</h2>
+          <h2 className="text-white text-[20px]">About page</h2>
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

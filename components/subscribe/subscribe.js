@@ -2,9 +2,9 @@ import React from "react";
 
 const Subscribe = () => {
   return (
-    <div className="bg-[#e2f7fa] py-[50px] mt-[70px]">
-      <div className="w-full flex justify-center">
-        <div className="w-[100%] px-[5%] lg:w-[75%] flex justify-center flex-col md:flex-row items-center gap-x-[20px]">
+    <div className="bg-[#181d20] py-[50px] mt-[60px]">
+      <div className="w-full flex justify-center ">
+        <div className="w-[100%] px-[5%] lg:w-[75%] bg-[#c2c3c7] py-[50px] flex justify-center flex-col md:flex-row items-center gap-x-[20px]">
           <p className="mb-[25px] text-[15px] font-medium text-[#000]">
             Subscribe Today
           </p>

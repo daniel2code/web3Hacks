@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Sec = () => {
   return (
-    <div className="w-full flex gap-x-[15px] border items-start sm:items-center lg:items-start border-t-0 border-x-0 border-b-gray-200">
+    <div className="w-full flex gap-x-[15px] border items-start sm:items-center lg:items-start border-t-0 border-x-0 border-b-[#c2c3c7]">
       <div className="w-[110px] h-[100px] md:w-[150px] md:h-[100px] max-w-[110px] max-h-[110px] md:max-w-[150px] md:max-h-[100px] ">
         <Image
           src={require("../../assets/about.jpg")}
@@ -21,7 +21,7 @@ const Sec = () => {
           What to Wear to a Taylor Swift Concert, According to Gigi Hadid
         </h3>
 
-        <p className="text-[11px] sm:text-[12px] text-[#fff] mt-2 leading-[14px]">
+        <p className="text-[11px] sm:text-[12px] text-[#c2c3c7] mt-2 leading-[14px]">
           There are many elements of Charlotte D’Alessio’s life that read like a
           teenager’s fairy tale.…
         </p>

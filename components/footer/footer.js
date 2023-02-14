@@ -4,7 +4,7 @@ import { BsFacebook, BsTwitter, BsTelegram, BsInstagram } from "react-icons/bs";
 const Footer = () => {
   return (
     <div
-      className={`w-full flex justify-center py-[70px] bg-[#161616] mt-[80px]`}
+      className={`w-full flex justify-center pb-[70px] bg-[#181d20] mt-[80px] `}
     >
       <div className={`lg:w-[75%] max-w-[1300px] px-[5%] lg:px-0`}>
         <div className="flex justify-between items-start gap-x-[7%] lg:flex-row flex-col gap-y-[30px]">

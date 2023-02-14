@@ -9,7 +9,7 @@ import Socials from "../../components/socials/socials";
 
 const Testnet = () => {
   return (
-    <div>
+    <div style={{backgroundColor: "#181d20"}} >
       <Navbar />
       <ImgT title="Testnets" />
       <PostWrapper>
@@ -22,8 +22,8 @@ const Testnet = () => {
           );
         })}
       </PostWrapper>
-      <Socials />
       <Subscribe />
+      <Socials />
       <Footer />
     </div>
   );

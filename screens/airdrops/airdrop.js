@@ -9,7 +9,7 @@ import Socials from "../../components/socials/socials";
 
 const Airdrop = () => {
   return (
-    <div>
+    <div style={{backgroundColor: "#181d20"}}>
       <Navbar />
       <ImgT title="Airdrops" />
       <PostWrapper>

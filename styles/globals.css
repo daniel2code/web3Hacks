@@ -19,6 +19,21 @@ a {
   box-sizing: border-box;
 }
 
+.shadow {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+.scroll-style::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  height: 0px;
+  width: 0px;
+}
+
+.scroll-style::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
 .image {
   object-fit: contain;
   width: 100% !important;

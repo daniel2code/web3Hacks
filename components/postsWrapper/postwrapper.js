@@ -8,7 +8,7 @@ const Postwrapper = ({ children }) => {
         <div className={`xmd:w-[60%] w-full`}>{children}</div>
         <div className={`xmd:w-[40%] w-full md:pl-[25px] pl-0`}>
           <div className="flex flex-col gap-y-[25px] sticky top-[150px] left-0">
-            <h2 className="text-center mb-4 font-semibold text-[#000] text-[17px ]">
+            <h2 className="text-center mb-4 font-semibold text-[#c2c3c7] text-[17px ]">
               Latest Posts
             </h2>
             {[...Array(5)].map((item, i) => {
