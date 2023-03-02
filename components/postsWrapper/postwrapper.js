@@ -12,7 +12,7 @@ const Postwrapper = ({ children }) => {
               Latest Posts
             </h2>
             {[...Array(5)].map((item, i) => {
-              return <SecondaryCard key={i} key={i} />;
+              return <SecondaryCard key={i} />;
             })}
           </div>
 
