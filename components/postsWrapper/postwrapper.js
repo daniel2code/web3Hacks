@@ -12,7 +12,7 @@ const Postwrapper = ({ children }) => {
               Latest Posts
             </h2>
             {[...Array(5)].map((item, i) => {
-              return <SecondaryCard key={i} />;
+              return <SecondaryCard key={i} key={i} />;
             })}
           </div>
 
@@ -22,7 +22,7 @@ const Postwrapper = ({ children }) => {
             </h2>
             {[...Array(5)].map((item, i) => {
               return (
-                <div className="border border-x-0 border-t-0 border-b-[#ffffff50] pb-[18px]" >
+                <div className="border border-x-0 border-t-0 border-b-[#ffffff50] pb-[18px]" key={i} >
                   <h2 className="text-[#fff] font-bold text-[17px] leading-[18px] w-[100%] ">
                     Web3 Hacks coin launch program and acceleration
                   </h2>
