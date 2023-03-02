@@ -18,6 +18,16 @@ const Sidebar = () => {
           {" "}
           <Link href="/admin/manage">Manage Post</Link>
         </p>
+
+        <p className="pl-[22%] font-semibold cursor-pointer">
+          {" "}
+          <Link href="/admin/event">Create Event</Link>
+        </p>
+
+        <p className="pl-[22%] font-semibold cursor-pointer">
+          {" "}
+          <Link href="/admin/manage-event">Manage Event</Link>
+        </p>
       </div>
     </div>
   );

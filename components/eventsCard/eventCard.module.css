@@ -1,0 +1,10 @@
+.cardWrap {
+    background-image: url("../../assets/event.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 120px;
+    width: 100%;
+    background-color: #181d2070;
+    background-blend-mode: multiply;
+  }

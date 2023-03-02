@@ -1,53 +1,87 @@
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import Wrapper from "../wrapper/wrapper";
+// import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 // import { Editor } from "react-draft-wysiwyg";
 import { useMutation } from "react-query";
 import axios from "axios";
 import { notifications } from "../../../utils/notificationBar";
+import { modules, formats } from "../../../utils/editorAssets";
 
-const Editor = dynamic(
-  () => import("react-draft-wysiwyg").then((mod) => mod.Editor),
-  {
-    ssr: false,
-  }
-);
-import { EditorState } from "draft-js";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
-const Write = () => {
-  const [editorState, setEditorState] = useState(() =>
-    EditorState.createEmpty()
-  );
+const ReactQuill = dynamic(() => import("react-quill"), {
+  ssr: false,
+});
 
+const Write = () => {
+  const [editorValue, setEditorValue] = useState(null);
+  const [base64Image, setBase64Image] = useState("");
   const [formValues, setFormValues] = useState({
     postTitle: "",
     category: "",
     author: "",
     datePublished: "",
-    image: "",
-    body: editorState,
+    image: base64Image,
+    body: editorValue,
   });
-  const { isLoading, isError, error, mutate } = useMutation(postArticle);
+  // const { isLoading, isError, error, mutate } = useMutation(postArticle);
 
-  async function postArticle() {
-    const response = await axios.post(
-      "https://quiclet.urbandesignsco.com/api/admin/articles/create"
+  useEffect(() => {
+    console.log(document);
+  }, []);
+
+  // async function postArticle() {
+  //   const response = await axios.post(
+  //     "https://quiclet.urbandesignsco.com/api/admin/articles/create"
+  //   );
+  //   console.log(response.data);
+  // }
+
+  const mutation = useMutation((newTodo) => {
+    return axios.post(
+      "https://quiclet.urbandesignsco.com/api/admin/articles/create",
+      newTodo
     );
-    console.log(response.data);
-  }
+  });
+
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      setBase64Image(reader.result);
+    };
+  };
+
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
 
+  const handleChangeEditor = (html) => {
+    setEditorValue(html);
+  };
+
   function handleSubmit(e) {
     e.preventDefault();
-    mutate({ title: formValues.postTitle, content: formValues.body });
-    console.log(formValues);
+    mutation.mutate({
+      title: formValues.postTitle,
+      content: editorValue,
+      description: "hello world",
+      category_id: 1,
+      image: base64Image,
+    });
+    console.log({
+      title: formValues.postTitle,
+      content: editorValue,
+      description: "hello world",
+      category_id: 1,
+      image: base64Image,
+    });
   }
-
-  // notifications()
 
   return (
     <Wrapper>
@@ -121,17 +155,28 @@ const Write = () => {
               className="w-full px-3 py-2 outline-none mt-1 rounded border border-gray-400"
               placeholder="Date published"
               type="file"
-              name="image"
-              value={formValues.image}
-              onChange={handleChange}
+              // name="image"
+              // value={base64Image}
+              // onChange={handleChange}
+              onChange={handleImageUpload}
             />
           </div>
         </form>
 
         <div className="min-h-[400px] p-3 rounded-md border border-gray-400 mt-8">
-          <Editor
+          {/* <Editor
             editorState={editorState}
             onEditorStateChange={setEditorState}
+          /> */}
+
+          <ReactQuill
+            theme="snow"
+            onChange={handleChangeEditor}
+            value={editorValue}
+            modules={modules}
+            formats={formats}
+            bounds={".app"}
+            placeholder="write something ..."
           />
         </div>
       </div>

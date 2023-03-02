@@ -7,31 +7,22 @@ const AdminLogin = () => {
     email: "",
     password: "",
   });
-  const { isLoading, isError, error, mutate } = useMutation(loginAdmin);
 
   const handleChange = (e) => {
     setFormDetails({ ...formDetails, [e.target.name]: e.target.value });
   };
 
-  async function loginAdmin() {
-    const response = await axios.post(
-      "https://quiclet.urbandesignsco.com/api/admin/login"
+  const mutation = useMutation((newTodo) => {
+    return axios.post(
+      "https://quiclet.urbandesignsco.com/api/admin/login",
+      newTodo
     );
-    console.log(response.data);
-  }
+  });
 
   function handleSubmit(e) {
     e.preventDefault();
-    mutate(formDetails);
+    mutation.mutate(formDetails);
   }
-
-  console.log(formDetails);
-  console.log(error);
-  console.log(isError);
-
-  // if (isError) {
-  //   return <div>Error! {error.message}</div>;
-  // }
 
   return (
     <div className="w-full h-screen bg-black flex flex-col justify-center items-center">
@@ -64,10 +55,10 @@ const AdminLogin = () => {
           />
 
           <button
-            disabled={isLoading}
+            disabled={mutation.isLoading}
             className="bg-[#7a8c90] w-full mt-[30px] flex justify-center items-center h-[55px] text-white"
           >
-            Login {isLoading && <div className="lds-dual-ring"></div>}
+            Login {mutation.isLoading && <div className="lds-dual-ring"></div>}
           </button>
         </form>
       </div>
