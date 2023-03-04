@@ -19,7 +19,7 @@ const Navbar = ({ bg }) => {
 
   const bgColor = bg === true ? "bg-transparent" : "bg-[#181d20]";
   const navText = bg ? "text-white" : "text-[#c2c3c7]";
-  const iconColor = bg ? "white" : "#c2c3c7";
+  const iconColor = bg ? "#ff5f13" : "#c2c3c7";
 
   return (
     <div className={`w-full flex justify-center fixed ${bgColor} z-10`}>
@@ -37,6 +37,10 @@ const Navbar = ({ bg }) => {
             <li className={`cursor-pointer ${navText}`}>
               {" "}
               <Link href="/about">About</Link>
+            </li>
+            <li className={`cursor-pointer ${navText}`}>
+              {" "}
+              <Link href="/event">Event</Link>
             </li>
           </ul>{" "}
           <ul className={`flex gap-5`}>
@@ -90,33 +94,41 @@ const Navbar = ({ bg }) => {
       </div>
 
       {menu && (
-        <div className="fixed bg-[#00000050] w-full h-screen">
-          <div className="bg-[#fff] p-[5%] w-[75%] h-screen">
-            <MdOutlineClose color="black" size={30} onClick={handleMenu} />
+        <div className="fixed bg-[#00000050] w-full px-3 py-3 h-screen">
+          <div className="bg-[#181d20] border border-[#c2c3c730] p-[5%] rounded w-[100%] h-[490px]">
+            <MdOutlineClose
+              color="#fff"
+              className="float-right"
+              size={30}
+              onClick={handleMenu}
+            />
 
-            <ul className={`flex flex-col gap-3 mt-6`}>
-              <li className={`text-black cursor-pointer font-medium`}>
+            <ul className={`flex flex-col gap-3 mt-7`}>
+              <li className={`text-[#fff] cursor-pointer font-medium`}>
                 <Link href="/">Home</Link>
               </li>
-              <li className={`text-black cursor-pointer font-medium`}>
+              <li className={`text-[#fff] cursor-pointer font-medium`}>
                 <Link href="/contact">Contact</Link>
               </li>
-              <li className={`text-black cursor-pointer font-medium`}>
+              <li className={`text-[#fff] cursor-pointer font-medium`}>
                 <Link href="/about">About</Link>
+              </li>
+              <li className={`text-[#fff] cursor-pointer font-medium`}>
+                <Link href="/event">Event</Link>
               </li>
             </ul>
 
             <ul className={`flex flex-col gap-4 mt-4`}>
-              <li className={`text-black cursor-pointer font-medium`}>
+              <li className={`text-[#fff] cursor-pointer font-medium`}>
                 <Link href="/blog">Blog</Link>
               </li>
-              <li className={`text-black cursor-pointer font-medium`}>
+              <li className={`text-[#fff] cursor-pointer font-medium`}>
                 <Link href="/testnet">Testnets</Link>
               </li>
-              <li className={`text-black cursor-pointer font-medium`}>
+              <li className={`text-[#fff] cursor-pointer font-medium`}>
                 <Link href="/airdrop">Airdrops</Link>
               </li>
-              <li className={`text-black cursor-pointer font-medium`}>
+              <li className={`text-[#fff] cursor-pointer font-medium`}>
                 <Link href="/trending">Trending</Link>
               </li>
             </ul>
@@ -124,24 +136,24 @@ const Navbar = ({ bg }) => {
             <ul className={`flex gap-5 mt-10`}>
               <li className="cursor-pointer">
                 {" "}
-                <BsFacebook color="black" size={25} />
+                <BsFacebook color="#ff5f13" size={25} />
               </li>
               <li className="cursor-pointer">
                 {" "}
-                <BsTwitter color="black" size={25} />
+                <BsTwitter color="#ff5f13" size={25} />
               </li>
               <li className="cursor-pointer">
                 {" "}
-                <BsInstagram color="black" size={25} />
+                <BsInstagram color="#ff5f13" size={25} />
               </li>
               <li className="cursor-pointer">
                 {" "}
-                <BsTelegram color="black" size={25} />
+                <BsTelegram color="#ff5f13" size={25} />
               </li>
             </ul>
 
-            <div className="p-2 bg-[#f2f3f8] rounded-full w-[60px] h-[45px] flex items-center justify-center fixed bottom-3">
-              <BsFillMoonFill color="black" size={23} />
+            <div className="p-2 bg-[#ff5f1330] rounded-full w-[60px] h-[37px] flex items-center justify-center mt-[30px]">
+              <BsFillMoonFill color="#ff5f13" size={20} />
             </div>
           </div>
         </div>
