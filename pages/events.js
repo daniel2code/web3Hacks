@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import MainEvent from "../screens/events/mainEvent";
 
 const Events = () => {
   return (
-    <div>Events</div>
-  )
-}
+    <>
+      <MainEvent />
+    </>
+  );
+};
 
-export default Events
+export default Events;

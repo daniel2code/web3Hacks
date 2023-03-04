@@ -19,7 +19,7 @@ const Navbar = ({ bg }) => {
 
   const bgColor = bg === true ? "bg-transparent" : "bg-[#181d20]";
   const navText = bg ? "text-white" : "text-[#c2c3c7]";
-  const iconColor = bg ? "#ff5f13" : "#c2c3c7";
+  const iconColor = bg ? "#ff5f13" : "#ff5f13";
 
   return (
     <div className={`w-full flex justify-center fixed ${bgColor} z-10`}>
@@ -40,7 +40,7 @@ const Navbar = ({ bg }) => {
             </li>
             <li className={`cursor-pointer ${navText}`}>
               {" "}
-              <Link href="/event">Event</Link>
+              <Link href="/events">Events</Link>
             </li>
           </ul>{" "}
           <ul className={`flex gap-5`}>
@@ -114,7 +114,7 @@ const Navbar = ({ bg }) => {
                 <Link href="/about">About</Link>
               </li>
               <li className={`text-[#fff] cursor-pointer font-medium`}>
-                <Link href="/event">Event</Link>
+                <Link href="/events">Event</Link>
               </li>
             </ul>
 
