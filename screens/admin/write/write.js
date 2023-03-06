@@ -28,10 +28,6 @@ const Write = () => {
   });
   // const { isLoading, isError, error, mutate } = useMutation(postArticle);
 
-  useEffect(() => {
-    console.log(document);
-  }, []);
-
   // async function postArticle() {
   //   const response = await axios.post(
   //     "https://quiclet.urbandesignsco.com/api/admin/articles/create"
@@ -56,7 +52,6 @@ const Write = () => {
     };
   };
 
-
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
@@ -74,13 +69,6 @@ const Write = () => {
       category_id: 1,
       image: base64Image,
     });
-    console.log({
-      title: formValues.postTitle,
-      content: editorValue,
-      description: "hello world",
-      category_id: 1,
-      image: base64Image,
-    });
   }
 
   return (
@@ -92,8 +80,9 @@ const Write = () => {
           <button
             className="bg-[#00b4d8] text-white rounded px-[40px] cursor-pointer"
             onClick={handleSubmit}
+            disabled={mutation.isLoading}
           >
-            Post
+            Post {mutation.isLoading && <div className="lds-dual-ring"></div>}
           </button>
         </div>
 

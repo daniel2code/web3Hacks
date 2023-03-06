@@ -17,11 +17,17 @@ const Contact = () => {
       <Navbar />
       <div className="w-full flex justify-center pt-[55px] md:pt-[105px]">
         <div
-          className={`w-[100%] flex justify-center items-center mt-3 ${styles.wrapper}`}
+          className={`w-[100%] flex justify-center flex-col items-center mt-3 ${styles.wrapper}`}
         >
           <h2 className="text-white text-[30px] sm:text-[40px] font-bold">
             Contact Us
           </h2>
+
+          <p className="text-[#fff] text-[17px] text-center px-[5%] xl:w-[85%] w-full" >
+            Partnerships strengthen all involved parties. If you’re looking for
+            partnerships or advertising opportunities reach out and let’s grow
+            together!
+          </p>
         </div>
       </div>
 

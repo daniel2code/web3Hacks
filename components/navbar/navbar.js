@@ -42,6 +42,11 @@ const Navbar = ({ bg }) => {
               {" "}
               <Link href="/events">Events</Link>
             </li>
+
+            <li className={`cursor-pointer ${navText}`}>
+              {" "}
+              <Link href="/organizer">Organizer</Link>
+            </li>
           </ul>{" "}
           <ul className={`flex gap-5`}>
             <li className="cursor-pointer">
@@ -95,7 +100,7 @@ const Navbar = ({ bg }) => {
 
       {menu && (
         <div className="fixed bg-[#00000050] w-full px-3 py-3 h-screen">
-          <div className="bg-[#181d20] border border-[#c2c3c730] p-[5%] rounded w-[100%] h-[490px]">
+          <div className="bg-[#181d20] border border-[#c2c3c730] p-[5%] rounded w-[100%] h-[500px]">
             <MdOutlineClose
               color="#fff"
               className="float-right"
@@ -115,6 +120,10 @@ const Navbar = ({ bg }) => {
               </li>
               <li className={`text-[#fff] cursor-pointer font-medium`}>
                 <Link href="/events">Event</Link>
+              </li>
+
+              <li className={`cursor-pointer ${navText}`}>
+                <Link href="/organizer">Organizer</Link>
               </li>
             </ul>
 
