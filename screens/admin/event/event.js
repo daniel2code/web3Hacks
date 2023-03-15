@@ -1,18 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Wrapper from "../wrapper/wrapper";
 import { useMutation } from "react-query";
 import { ImageTo64 } from "../../../utils/convertImageToBase64";
 import { notifications } from "../../../utils/notificationBar";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 const EventPage = () => {
+  const [step, setStep] = useState(1);
   const [formValues, setFormValues] = useState({
     title: "",
     description: "",
-    author: "",
     date: "",
     time: "",
   });
+
+  const auth = useSelector((state) => state.reducer.auth);
 
   const { base64Image, handleImageUpload } = ImageTo64();
 
@@ -22,20 +25,50 @@ const EventPage = () => {
 
   const mutation = useMutation((newTodo) => {
     return axios.post(
-      "https://quiclet.urbandesignsco.com/api/admin/events/create",
-      newTodo
+      "http://quiclet.urbandesignsco.com/api/admin/events/create",
+      newTodo,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
     );
   });
 
+  useEffect(() => {
+    if (step <= 1 && mutation.isSuccess === true) {
+      notifications("success", mutation?.data?.data?.message);
+      setStep(step + 1);
+      setFormValues({
+        ...formValues,
+        title: "",
+        time: "",
+        date: "",
+        description: "",
+      });
+      setBase64Image("");
+      console.log(mutation?.data?.data);
+    }
+  }, [mutation]);
+
   function handleSubmit(e) {
     e.preventDefault();
-
-    mutation.mutate({
-      title: formValues.title,
-      description: "hello world",
-      date: `${(formValues.date, formValues.time)}`,
-      cover_image: base64Image,
-    });
+    if (
+      !formValues.title ||
+      !formValues.date ||
+      !formValues.time ||
+      !base64Image
+    ) {
+      notifications("danger", "Inputs must not be empty");
+    } else {
+      mutation.mutate({
+        title: formValues.title,
+        description: formValues.description,
+        date: `${(formValues.date, formValues.time)}`,
+        cover_image: base64Image,
+      });
+      setStep(1);
+    }
   }
 
   console.log(mutation.error);

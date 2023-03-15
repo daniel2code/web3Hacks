@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./event.module.css";
 import EventCard from "../../../components/eventsCard/eventCard";
+import Link from "next/link";
 
 const Events = () => {
   return (
@@ -24,7 +25,7 @@ const Events = () => {
 
           <div className="w-full justify-center mt-[40px] flex">
             <button className="w-[100px] bg-[#ff5f13] h-[40px] text-[14px] rounded text-white">
-              More events
+              <Link href="/events">More events</Link>
             </button>
           </div>
         </div>

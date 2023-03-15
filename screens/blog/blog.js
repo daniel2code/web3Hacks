@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Navbar from "../../components/navbar/navbar";
 import ImgT from "../../components/imagewithTitle/imgT";
 import PostWrapper from "../../components/postsWrapper/postwrapper";
@@ -12,52 +12,17 @@ import axios from "axios";
 const Blog = () => {
   // const { data, error, isError, isLoading } = useQuery("users", fetchPosts);
 
-  // const { isLoading, isError, data, error, refetch } = useQuery(["repo"], () =>
-  //   axios
-  //     .get("https://quiclet.urbandesignsco.com/api/admin/articles")
-  //     .then((res) => res.data)
-  // );
+  const { isLoading, isError, data, error, refetch } = useQuery(["posts"], () =>
+    axios
+      .get("http://quiclet.urbandesignsco.com/api/articles/all",)
+      .then((res) => res.data)
+  );
 
   // if (isLoading) return "Loading...";
 
   // if (error) return "An error has occurred: " + error.message;
 
-  // console.log(data);
-
-  async function fetchPosts() {
-    // await axios.get("https://quiclet.urbandesignsco.com/api/admin/articles", {
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // });
-
-    // fetch({
-    //   url: "https://jsonplaceholder.typicode.com/posts",
-    //   method: "get",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // })
-    //   .then((res) => res.json)
-    //   .then((res) => console.log(res))
-    //   .catch((err) => console.log(err));
-
-    fetch("http://quiclet.urbandesignsco.com/api/admin/articles")
-      .then((response) => response.json())
-      .then((json) => console.log(json));
-
-    // return data;
-  }
-
-  useEffect(() => {
-    fetchPosts();
-  }, []);
-
-  // if (isError) {
-  //   return <div>Error! {error.message}</div>;
-  // }
-
-  // console.log(data);
+  console.log(data);
 
   return (
     <div style={{ backgroundColor: "#181d20" }}>

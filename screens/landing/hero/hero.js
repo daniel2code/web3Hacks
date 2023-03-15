@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Hero.module.css";
 import { BsFacebook, BsTwitter, BsTelegram, BsInstagram } from "react-icons/bs";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 import Link from "next/link";
 import Navbar from "../../../components/navbar/navbar";
+import heroImg from "../../../assets/bloc.jpg";
 
 const Hero = () => {
+  const [step, setStep] = useState(1);
+
+  const link = "https://media.istockphoto.com/id/1413037138/photo/technology-block-chain-network-connection-big-data-visualization-cyber-security-background.jpg?b=1&s=170667a&w=0&k=20&c=OSNRmcab3VoQtxqvg89ahu_s06OEC-93mkpFwJsXbPU="
+
   return (
-    <main className={`${styles.heroWrap} flex justify-center`}>
+    <div
+      className={`${styles.heroWrap} flex justify-center`}
+      // style={{ backgroundImage: `url(${link})` }}
+    >
       <Navbar bg={true} />
       <div
         className={`w-full xl:w-[75%] max-w-[1300px] px-[5%] xl:px-[0%] flex flex-col items-center justify-center`}
@@ -69,7 +77,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 };
 

@@ -1,10 +1,12 @@
 import "../styles/globals.css";
 import { Provider } from "react-redux";
-import store from "../provider/store";
+import { PersistGate } from "redux-persist/integration/react";
+import store, { persistor } from "../provider/store";
 import { QueryClient, QueryClientProvider } from "react-query";
 import Head from "next/head";
 import "react-notifications-component/dist/theme.css";
 import { ReactNotifications } from "react-notifications-component";
+
 
 const queryClient = new QueryClient();
 
@@ -18,8 +20,10 @@ function MyApp({ Component, pageProps }) {
       </Head> */}
       <QueryClientProvider client={queryClient}>
         <Provider store={store}>
-          <ReactNotifications />
-          <Component {...pageProps} />
+          <PersistGate loading={null} persistor={persistor}>
+            <ReactNotifications />
+            <Component {...pageProps} />
+          </PersistGate>
         </Provider>
       </QueryClientProvider>
     </div>

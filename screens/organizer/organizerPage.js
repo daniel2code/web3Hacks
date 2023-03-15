@@ -3,6 +3,7 @@ import Navbar from "../../components/navbar/navbar";
 import ImgT from "../../components/imagewithTitle/imgT";
 import Socials from "../../components/socials/socials";
 import Footer from "../../components/footer/footer";
+
 const tableData = [
   {
     date: "13|06|2023",

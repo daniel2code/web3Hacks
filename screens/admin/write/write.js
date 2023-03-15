@@ -10,12 +10,14 @@ import { notifications } from "../../../utils/notificationBar";
 import { modules, formats } from "../../../utils/editorAssets";
 
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import { useSelector } from "react-redux";
 
 const ReactQuill = dynamic(() => import("react-quill"), {
   ssr: false,
 });
 
 const Write = () => {
+  const [step, setStep] = useState(1);
   const [editorValue, setEditorValue] = useState(null);
   const [base64Image, setBase64Image] = useState("");
   const [formValues, setFormValues] = useState({
@@ -26,6 +28,7 @@ const Write = () => {
     image: base64Image,
     body: editorValue,
   });
+  const auth = useSelector((state) => state.reducer.auth);
   // const { isLoading, isError, error, mutate } = useMutation(postArticle);
 
   // async function postArticle() {
@@ -37,8 +40,13 @@ const Write = () => {
 
   const mutation = useMutation((newTodo) => {
     return axios.post(
-      "https://quiclet.urbandesignsco.com/api/admin/articles/create",
-      newTodo
+      "http://quiclet.urbandesignsco.com/api/admin/articles/create",
+      newTodo,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
     );
   });
 
@@ -60,15 +68,36 @@ const Write = () => {
     setEditorValue(html);
   };
 
+  useEffect(() => {
+    if (step <= 1 && mutation.isSuccess === true) {
+      notifications("success", mutation?.data?.data?.message);
+      setStep(step + 1);
+      setFormValues({ ...formValues, postTitle: "", author: "" });
+      setBase64Image("");
+      setEditorValue(null);
+      console.log(mutation?.data?.data);
+    }
+  }, [mutation]);
+
   function handleSubmit(e) {
     e.preventDefault();
-    mutation.mutate({
-      title: formValues.postTitle,
-      content: editorValue,
-      description: "hello world",
-      category_id: 1,
-      image: base64Image,
-    });
+    if (
+      !formValues.postTitle ||
+      !editorValue ||
+      !formValues.author ||
+      !base64Image
+    ) {
+      notifications("danger", "Inputs must not be empty");
+    } else {
+      mutation.mutate({
+        title: formValues.postTitle,
+        content: editorValue,
+        description: formValues.author,
+        category_id: 1,
+        image: base64Image,
+      });
+      setStep(1);
+    }
   }
 
   return (

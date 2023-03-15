@@ -1,5 +1,6 @@
 import React from "react";
 import Wrapper from "../wrapper/wrapper";
+import { useSelector } from "react-redux";
 import { MdOutlineArticle } from "react-icons/md";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { FaMoneyBillWave } from "react-icons/fa";
@@ -27,6 +28,8 @@ const Home = () => {
       color: "	#88080830",
     },
   ];
+
+  const posts = useSelector((state) => state.reducer.post.posts);
 
   return (
     <Wrapper>

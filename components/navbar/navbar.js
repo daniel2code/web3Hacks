@@ -22,7 +22,9 @@ const Navbar = ({ bg }) => {
   const iconColor = bg ? "#ff5f13" : "#ff5f13";
 
   return (
-    <div className={`w-full flex justify-center fixed ${bgColor} z-10`}>
+    <div
+      className={`w-full flex justify-center fixed navbar-box ${bgColor} z-10`}
+    >
       <div className={`xl:w-[75%] max-w-[1300px] w-full px-[5%] xl:px-0`}>
         <div
           className={`md:flex hidden w-full justify-between border border-b-gray-200 border-x-0 border-t-0 pt-3 pb-4`}
@@ -46,6 +48,11 @@ const Navbar = ({ bg }) => {
             <li className={`cursor-pointer ${navText}`}>
               {" "}
               <Link href="/organizer">Organizer</Link>
+            </li>
+
+            <li className={`cursor-pointer ${navText}`}>
+              {" "}
+              <Link href="/coins">Coins</Link>
             </li>
           </ul>{" "}
           <ul className={`flex gap-5`}>
@@ -100,7 +107,7 @@ const Navbar = ({ bg }) => {
 
       {menu && (
         <div className="fixed bg-[#00000050] w-full px-3 py-3 h-screen">
-          <div className="bg-[#181d20] border border-[#c2c3c730] p-[5%] rounded w-[100%] h-[500px]">
+          <div className="bg-[#181d20] border border-[#c2c3c730] p-[5%] rounded w-[100%] h-[570px]">
             <MdOutlineClose
               color="#fff"
               className="float-right"
@@ -122,8 +129,12 @@ const Navbar = ({ bg }) => {
                 <Link href="/events">Event</Link>
               </li>
 
-              <li className={`cursor-pointer ${navText}`}>
+              <li className={`cursor-pointer font-medium text-[#fff]`}>
                 <Link href="/organizer">Organizer</Link>
+              </li>
+
+              <li className={`cursor-pointer text-[#fff] font-medium`}>
+                <Link href="/coins">Coins</Link>
               </li>
             </ul>
 

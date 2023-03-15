@@ -1,13 +1,21 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useMutation } from "react-query";
 import axios from "axios";
+import { useRouter } from "next/router";
 import { notifications } from "../../../utils/notificationBar";
+import { useDispatch, useSelector } from "react-redux";
+import { checkIsAuth, saveToken } from "../../../provider/slices/authSlice";
 
 const AdminLogin = () => {
+  const [step, setStep] = useState(1);
   const [formDetails, setFormDetails] = useState({
     email: "",
     password: "",
   });
+
+  const router = useRouter();
+  const auth = useSelector((state) => state.reducer.auth);
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setFormDetails({ ...formDetails, [e.target.name]: e.target.value });
@@ -15,21 +23,46 @@ const AdminLogin = () => {
 
   const mutation = useMutation((newTodo) => {
     return axios.post(
-      "https://quiclet.urbandesignsco.com/api/admin/login",
+      "http://quiclet.urbandesignsco.com/api/admin/login",
       newTodo
     );
   });
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    mutation.mutate(formDetails);
+    setStep(1);
+    await mutation.mutate(formDetails);
   }
+
+  // const updateStore = useCallback(() => {}, []);
+
+  useEffect(() => {
+    if (step <= 1 && mutation.isError) {
+      notifications("danger", mutation.error?.response.data.message);
+      setStep(step + 1);
+    }
+
+    if (step <= 1 && mutation.isSuccess === true) {
+      notifications("success", mutation?.data?.data?.message);
+      setStep(step + 1);
+      dispatch(saveToken(mutation?.data?.data?.data?.token));
+      dispatch(checkIsAuth(true));
+      setTimeout(() => {
+        auth.isAuth && router.push("/admin/home");
+      }, 2000);
+      console.log(mutation?.data?.data?.data?.token);
+    }
+  }, [mutation]);
 
   return (
     <div className="w-full h-screen bg-black flex flex-col justify-center items-center">
       <h3 className="text-[28px] sm:text-[35px] font-bold text-white">
         Admin Login
       </h3>
+
+      {/* <p className="text-[#fff]">
+        error: {mutation.error?.response.data.message}
+      </p> */}
 
       <div className="max-w-[600px] w-full formbox px-[2%] py-[30px] mt-[30px]">
         <form

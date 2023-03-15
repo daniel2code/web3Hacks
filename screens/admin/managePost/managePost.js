@@ -2,8 +2,12 @@ import React from "react";
 import Wrapper from "../wrapper/wrapper";
 import { MdOutlineArticle } from "react-icons/md";
 import PrimaryCard from "../../../components/primaryCard/primary";
+import { useSelector } from "react-redux";
+
 
 const ManagePost = () => {
+  const posts = useSelector((state) => state.reducer.post.posts);
+
   return (
     <Wrapper>
       <div className="p-6">
