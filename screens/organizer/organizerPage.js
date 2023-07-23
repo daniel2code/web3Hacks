@@ -132,7 +132,7 @@ const OrganizerPage = () => {
 
   return (
     <div style={{ backgroundColor: "#181d20" }}>
-      <Navbar />
+      <Navbar bg={true} />
       <ImgT title="Assets Organizer" />
 
       <div className={`w-full flex justify-center py-[70px]`}>

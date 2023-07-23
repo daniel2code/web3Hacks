@@ -14,7 +14,7 @@ import {
 const Contact = () => {
   return (
     <div style={{ backgroundColor: "#181d20" }}>
-      <Navbar />
+      <Navbar bg={true} />
       <div className="w-full flex justify-center pt-[55px] md:pt-[105px]">
         <div
           className={`w-[100%] flex justify-center flex-col items-center mt-3 ${styles.wrapper}`}

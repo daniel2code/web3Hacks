@@ -15,13 +15,13 @@ const Wrapper = ({ children }) => {
   console.log(posts);
 
   const router = useRouter();
-  !auth.isAuth && router.push("/admin/login");
+  // !auth.isAuth && router.push("/admin/login");
 
   const { isLoading, isError, isSuccess, data, error, refetch } = useQuery(
     ["posts"],
     () =>
       axios
-        .get("http://quiclet.urbandesignsco.com/api/articles/all", {
+        .get("http://quiclet.urbandesignsco.com/api/admin/articles", {
           headers: {
             Authorization: `Bearer ${auth.token}`,
           },

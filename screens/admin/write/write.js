@@ -38,6 +38,8 @@ const Write = () => {
   //   console.log(response.data);
   // }
 
+  console.log(editorValue);
+
   const mutation = useMutation((newTodo) => {
     return axios.post(
       "http://quiclet.urbandesignsco.com/api/admin/articles/create",
@@ -104,7 +106,9 @@ const Write = () => {
     <Wrapper>
       <div className="w-full max-w-[1400px] px-[30px] py-[30px]">
         <div className="flex justify-between">
-          <h1 className="text-[27px] font-semibold ">Create new post</h1>
+          <h1 className="text-[27px] font-semibold text-[#000] ">
+            Create new post
+          </h1>
 
           <button
             className="bg-[#00b4d8] text-white rounded px-[40px] cursor-pointer"
@@ -117,9 +121,11 @@ const Write = () => {
 
         <form className="mt-5 mb-3">
           <div className="w-full">
-            <label className="text-[15px] font-medium ">Post Title</label>
+            <label className="text-[15px] font-medium text-[#000]">
+              Post Title
+            </label>
             <input
-              className="w-full px-3 py-2 outline-none rounded border border-gray-400 mt-1"
+              className="w-full px-3 py-2 outline-none rounded border text-[#000] bg-[#fff] border-gray-400 mt-1"
               placeholder="Post Title"
               value={formValues.postTitle}
               name="postTitle"
@@ -127,26 +133,30 @@ const Write = () => {
             />
           </div>
           <div className="mt-3">
-            <label className="text-[15px] font-medium ">Select category</label>
+            <label className="text-[15px] font-medium text-[#000]">
+              Select category
+            </label>
             <select
               onChange={handleChange}
               value={formValues.category}
               name="category"
-              className="w-full outline-none px-3 py-2 rounded border border-gray-400 mt-1 bg-[transparent] "
+              className="w-full outline-none px-3 py-2 rounded border border-gray-400 mt-1 bg-[transparent] text-[#000]"
             >
               {/* <option disabled={true}>--select category--</option> */}
-              <option>Testnet</option>
-              <option>Airdrops</option>
-              <option>Blockchain</option>
-              <option>Trending</option>
+              <option className="text-[#000]">Testnet</option>
+              <option className="text-[#000]">Airdrops</option>
+              <option className="text-[#000]">Blockchain</option>
+              <option className="text-[#000]">Trending</option>
             </select>
           </div>
 
           <div className="w-full flex justify-between mt-3">
             <div className="w-[60%]">
-              <label className="text-[15px] font-medium ">Author</label>
+              <label className="text-[15px] font-medium text-[#000]">
+                Author
+              </label>
               <input
-                className="w-full px-3 mt-1 py-2 outline-none rounded border border-gray-400"
+                className="w-full px-3 mt-1 py-2 outline-none rounded bg-[#fff] text-[#000] border border-gray-400"
                 placeholder="Author"
                 value={formValues.author}
                 name="author"
@@ -155,9 +165,11 @@ const Write = () => {
             </div>
 
             <div className="w-[38%]">
-              <label className="text-[15px] font-medium ">Date published</label>
+              <label className="text-[15px] font-medium text-[#000]">
+                Date published
+              </label>
               <input
-                className="w-full px-3 py-2 outline-none mt-1 rounded border border-gray-400"
+                className="w-full px-3 py-2 outline-none mt-1 bg-[#fff] text-[#000] rounded border border-gray-400"
                 placeholder="Date published"
                 type="date"
                 name="datePublished"
@@ -168,9 +180,11 @@ const Write = () => {
           </div>
 
           <div className="w-full mt-2">
-            <label className="text-[15px] font-medium ">Cover image</label>
+            <label className="text-[15px] font-medium text-[#000]">
+              Cover image
+            </label>
             <input
-              className="w-full px-3 py-2 outline-none mt-1 rounded border border-gray-400"
+              className="w-full px-3 py-2 outline-none mt-1 bg-[#fff] text-[#000] rounded border border-gray-400"
               placeholder="Date published"
               type="file"
               // name="image"
@@ -195,6 +209,7 @@ const Write = () => {
             formats={formats}
             bounds={".app"}
             placeholder="write something ..."
+            className="text-[#000]"
           />
         </div>
       </div>

@@ -26,7 +26,7 @@ const Navbar = ({ bg }) => {
       className={`w-full flex justify-center fixed navbar-box ${bgColor} z-10`}
     >
       <div className={`xl:w-[75%] max-w-[1300px] w-full px-[5%] xl:px-0`}>
-        <div
+        {/* <div
           className={`md:flex hidden w-full justify-between border border-b-gray-200 border-x-0 border-t-0 pt-3 pb-4`}
         >
           <ul className={`flex gap-4`}>
@@ -73,11 +73,11 @@ const Navbar = ({ bg }) => {
               <BsTelegram color={iconColor} />{" "}
             </li>
           </ul>
-        </div>
+        </div> */}
 
         <div className={`w-full flex items-center justify-between pt-2`}>
           <h1 className={`text-[40px] ${navText}`}>Logo</h1>
-          <ul className={`hidden md:flex gap-6`}>
+          {/* <ul className={`hidden md:flex gap-6`}>
             <li className={`${navText} cursor-pointer`}>
               {" "}
               <Link href="/blog">Blog</Link>
@@ -94,8 +94,34 @@ const Navbar = ({ bg }) => {
               {" "}
               <Link href="/trending">Trending</Link>
             </li>
-          </ul>
+          </ul> */}
 
+          <ul className={`hidden md:flex gap-4`}>
+            <li className={`${"text-"} cursor-pointer ${navText}`}>
+              <Link href="/">Home</Link>
+            </li>
+            <li className={`cursor-pointer ${navText}`}>
+              <Link href="/contact">Contact</Link>
+            </li>
+            <li className={`cursor-pointer ${navText}`}>
+              {" "}
+              <Link href="/about">About</Link>
+            </li>
+            <li className={`cursor-pointer ${navText}`}>
+              {" "}
+              <Link href="/events">Events</Link>
+            </li>
+
+            <li className={`cursor-pointer ${navText}`}>
+              {" "}
+              <Link href="/organizer">Organizer</Link>
+            </li>
+
+            <li className={`cursor-pointer ${navText}`}>
+              {" "}
+              <Link href="/coins">Coins</Link>
+            </li>
+          </ul>{" "}
           <HiMenuAlt2
             className="flex md:hidden"
             size={30}
@@ -106,8 +132,8 @@ const Navbar = ({ bg }) => {
       </div>
 
       {menu && (
-        <div className="fixed bg-[#00000050] w-full px-3 py-3 h-screen">
-          <div className="bg-[#181d20] border border-[#c2c3c730] p-[5%] rounded w-[100%] h-[570px]">
+        <div className="fixed bg-[#00000050] z-10 w-full px-3 py-3 h-screen">
+          <div className="bg-[#181d20] border border-[#c2c3c730] p-[5%] rounded w-[100%] h-[530px]">
             <MdOutlineClose
               color="#fff"
               className="float-right"
@@ -172,9 +198,9 @@ const Navbar = ({ bg }) => {
               </li>
             </ul>
 
-            <div className="p-2 bg-[#ff5f1330] rounded-full w-[60px] h-[37px] flex items-center justify-center mt-[30px]">
+            {/* <div className="p-2 bg-[#ff5f1330] rounded-full w-[60px] h-[37px] flex items-center justify-center mt-[30px]">
               <BsFillMoonFill color="#ff5f13" size={20} />
-            </div>
+            </div> */}
           </div>
         </div>
       )}

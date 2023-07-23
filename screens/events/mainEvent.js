@@ -8,7 +8,7 @@ import Footer from "../../components/footer/footer";
 const MainEvent = () => {
   return (
     <div style={{ backgroundColor: "#181d20" }}>
-      <Navbar />
+      <Navbar bg={true} />
       <ImgT title="Upcoming Events" />
 
       <div className={`w-full flex justify-center py-[70px]`}>

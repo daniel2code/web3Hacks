@@ -3,7 +3,7 @@ import styles from "./ImgT.module.css";
 
 const ImgT = ({ title }) => {
   return (
-    <div className="w-full flex justify-center pt-[55px] md:pt-[105px]">
+    <div className="w-full flex justify-center pt-[55px] md:pt-[70px]">
       <div
         className={`w-[100%] flex justify-center items-center mt-6 ${styles.wrapper}`}
         // style={{ backgroundImage: "url(../../assets/bloc.jpg)" }}

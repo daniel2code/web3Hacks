@@ -7,6 +7,7 @@ const Events = () => {
   return (
     <div className={`w-full flex justify-center py-[70px]`}>
       <div className={`xl:w-[75%] w-full max-w-[1300px] px-[5%] xl:px-[0%]`}>
+        
         <div className={`${styles.popBox} pb-[15px]`}>
           <p className={`text-[12px] text-[#fff]`}>Never miss</p>
           <h2 className={`text-[35px] leading-[35px] text-[#fff]`}>

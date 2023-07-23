@@ -5,6 +5,7 @@ import Trends from "./trends/trends";
 import Subscribe from "../../components/subscribe/subscribe";
 import Events from "./event/events";
 import Tags from "./tags/tags";
+import Airdrop from "./airdrops/airTab";
 import Socials from "../../components/socials/socials";
 import Footer from "../../components/footer/footer";
 
@@ -14,6 +15,7 @@ const Landing = () => {
       <Hero />
       <Popular />
       <Trends />
+      <Airdrop />
       <Events />
       <Tags />
       <Subscribe />
