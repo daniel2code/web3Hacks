@@ -1,10 +1,9 @@
 import { Store } from "react-notifications-component";
 
 export const notifications = (type, message) => {
-    
   Store.addNotification({
     title: "Message",
-    message: message || "teodosii@react-notifications-component",
+    message: message,
     type: type || "success",
     insert: "top",
     container: "top-right",

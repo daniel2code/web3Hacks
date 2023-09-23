@@ -9,6 +9,7 @@ import {
 } from "react-icons/bs";
 import { MdOutlineClose } from "react-icons/md";
 import { HiMenuAlt2 } from "react-icons/hi";
+import Image from "next/image";
 
 const Navbar = ({ bg }) => {
   const [menu, setMenu] = useState(false);
@@ -23,9 +24,11 @@ const Navbar = ({ bg }) => {
 
   return (
     <div
-      className={`w-full flex justify-center fixed navbar-box ${bgColor} z-10`}
+      className={`w-full flex justify-center fixed navbar-box ${bgColor} z-10  `}
     >
-      <div className={`xl:w-[75%] max-w-[1300px] w-full px-[5%] xl:px-0`}>
+      <div
+        className={`xl:w-[75%] max-w-[1300px] flex justify-center items-center  w-full px-[5%] xl:px-0`}
+      >
         {/* <div
           className={`md:flex hidden w-full justify-between border border-b-gray-200 border-x-0 border-t-0 pt-3 pb-4`}
         >
@@ -75,8 +78,19 @@ const Navbar = ({ bg }) => {
           </ul>
         </div> */}
 
-        <div className={`w-full flex items-center justify-between pt-2`}>
-          <h1 className={`text-[40px] ${navText}`}>Logo</h1>
+        <div
+          className={`w-full flex items-center justify-between h-[65px] pt-2`}
+        >
+          <Link href="/" >
+            <Image
+              src="/logo.png"
+              width={140}
+              height={100}
+              alt="app logo"
+              className="object-cover"
+            />
+          </Link>
+          {/* <h1 className={`text-[40px] ${navText}`}>Logo</h1> */}
           {/* <ul className={`hidden md:flex gap-6`}>
             <li className={`${navText} cursor-pointer`}>
               {" "}
@@ -95,7 +109,6 @@ const Navbar = ({ bg }) => {
               <Link href="/trending">Trending</Link>
             </li>
           </ul> */}
-
           <ul className={`hidden md:flex gap-4`}>
             <li className={`${"text-"} cursor-pointer ${navText}`}>
               <Link href="/">Home</Link>

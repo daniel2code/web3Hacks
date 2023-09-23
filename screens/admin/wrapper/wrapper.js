@@ -8,8 +8,8 @@ import { updatePosts } from "../../../provider/slices/postsSlice";
 import axios from "axios";
 
 const Wrapper = ({ children }) => {
-  const auth = useSelector((state) => state.reducer.auth);
-  const posts = useSelector((state) => state.reducer.post.posts);
+  const auth = useSelector((state) => state.auth);
+  const posts = useSelector((state) => state.post.posts);
   const dispatch = useDispatch();
 
   console.log(posts);
@@ -21,12 +21,14 @@ const Wrapper = ({ children }) => {
     ["posts"],
     () =>
       axios
-        .get("http://quiclet.urbandesignsco.com/api/admin/articles", {
+        .get("https://api.dapplab.co/api/admin/articles", {
           headers: {
             Authorization: `Bearer ${auth.token}`,
           },
         })
-        .then((res) => res.data)
+        .then((res) => {
+          console.log(res.data);
+        })
   );
 
   useEffect(() => {
@@ -39,10 +41,10 @@ const Wrapper = ({ children }) => {
     <>
       <Topbar />
       <div className="flex">
-        <div className="w-[250px]">
+        <div className="w-[250px] fixed mt-[70px] ">
           <Sidebar />
         </div>
-        <div className="w-full">{children}</div>
+        <div className="w-full mt-[65px] ml-[250px]">{children}</div>
       </div>
     </>
   );

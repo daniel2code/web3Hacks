@@ -154,9 +154,18 @@ const Hero = () => {
         <div
           className={`w-full pb-[6%] flex-1 flex flex-col justify-center items-center`}
         >
-          <h4 className={`text-[#ff5f13] italic font-bold text-[20px]`}>
+          {/* <h4 className={`text-[#ff5f13] italic font-bold text-[20px]`}>
             Dapplabx
-          </h4>
+          </h4> */}
+
+          <Image
+            src="/logo.png"
+            width={170}
+            height={100}
+            alt="app logo"
+            className="object-cover"
+          />
+
           <h2
             className={`md:text-[45px] text-[35px] leading-[44px] text-center md:leading-[52px] mt-4 text-white max-w-[100%] lg:max-w-[85%] xl:max-w-[60%]`}
           >

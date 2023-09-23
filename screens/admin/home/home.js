@@ -29,7 +29,7 @@ const Home = () => {
     },
   ];
 
-  const posts = useSelector((state) => state.reducer.post.posts);
+  const posts = useSelector((state) => state.post.posts);
 
   return (
     <Wrapper>

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
+import { useSelector, useDispatch } from "react-redux";
 import Wrapper from "../wrapper/wrapper";
 // import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
 // import { Editor } from "react-draft-wysiwyg";
 import { useMutation } from "react-query";
 import axios from "axios";
@@ -10,7 +10,7 @@ import { notifications } from "../../../utils/notificationBar";
 import { modules, formats } from "../../../utils/editorAssets";
 
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import { useSelector } from "react-redux";
+import { createBlogPost } from "../../../provider/slices/posts/createPost";
 
 const ReactQuill = dynamic(() => import("react-quill"), {
   ssr: false,
@@ -28,7 +28,9 @@ const Write = () => {
     image: base64Image,
     body: editorValue,
   });
-  const auth = useSelector((state) => state.reducer.auth);
+  const auth = useSelector((state) => state.auth);
+  const { loading } = useSelector((state) => state.createPost);
+  const dispatch = useDispatch();
   // const { isLoading, isError, error, mutate } = useMutation(postArticle);
 
   // async function postArticle() {
@@ -38,11 +40,9 @@ const Write = () => {
   //   console.log(response.data);
   // }
 
-  console.log(editorValue);
-
   const mutation = useMutation((newTodo) => {
     return axios.post(
-      "http://quiclet.urbandesignsco.com/api/admin/articles/create",
+      "https://api.dapplab.co/api/admin/articles/create",
       newTodo,
       {
         headers: {
@@ -81,7 +81,7 @@ const Write = () => {
     }
   }, [mutation]);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     if (
       !formValues.postTitle ||
@@ -91,14 +91,42 @@ const Write = () => {
     ) {
       notifications("danger", "Inputs must not be empty");
     } else {
-      mutation.mutate({
-        title: formValues.postTitle,
-        content: editorValue,
-        description: formValues.author,
-        category_id: 1,
-        image: base64Image,
-      });
-      setStep(1);
+      // mutation.mutate({
+      //   title: formValues.postTitle,
+      //   content: editorValue,
+      //   description: formValues.author,
+      //   category_id: 1,
+      //   image: base64Image,
+      // });
+
+      try {
+        await dispatch(
+          createBlogPost({
+            title: formValues.postTitle,
+            content: editorValue,
+            description: formValues.author,
+            category_id: 1,
+            image: base64Image,
+            notifications,
+          })
+        );
+        setStep(1);
+
+        // notifications("success", "Article published successfully");
+        setFormValues({
+          postTitle: "",
+          image: "",
+          category: "",
+          author: "",
+          datePublished: "",
+          body: "",
+        });
+        setBase64Image("");
+        setEditorValue(null);
+        
+      } catch (err) {
+        console.log(err);
+      }
     }
   }
 
@@ -113,9 +141,9 @@ const Write = () => {
           <button
             className="bg-[#00b4d8] text-white rounded px-[40px] cursor-pointer"
             onClick={handleSubmit}
-            disabled={mutation.isLoading}
+            disabled={loading}
           >
-            Post {mutation.isLoading && <div className="lds-dual-ring"></div>}
+            Post {loading && <div className="lds-dual-ring"></div>}
           </button>
         </div>
 

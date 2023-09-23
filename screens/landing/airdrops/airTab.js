@@ -16,7 +16,7 @@ const Airdrop = () => {
           </h2>
         </div>
 
-        <div className="flex border border-[#c2c3c730] w-[66%] mt-[35px]">
+        <div className="flex border border-[#c2c3c730] w-full md:w-[66%] mt-[35px]">
           <div
             onClick={() => setTab("Airdrops")}
             className={`w-[33.3%] flex items-center text-[14px] md:text-[18px] font-semibold ${

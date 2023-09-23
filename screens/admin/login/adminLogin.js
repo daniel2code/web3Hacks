@@ -14,7 +14,7 @@ const AdminLogin = () => {
   });
 
   const router = useRouter();
-  const auth = useSelector((state) => state.reducer.auth);
+  const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -22,10 +22,7 @@ const AdminLogin = () => {
   };
 
   const mutation = useMutation((newTodo) => {
-    return axios.post(
-      "http://quiclet.urbandesignsco.com/api/admin/login",
-      newTodo
-    );
+    return axios.post("https://api.dapplab.co/api/admin/login", newTodo);
   });
 
   async function handleSubmit(e) {
@@ -34,6 +31,9 @@ const AdminLogin = () => {
     await mutation.mutate(formDetails);
   }
 
+  const saveUserToken = (token) => {
+    localStorage.setItem("token", token);
+  };
   // const updateStore = useCallback(() => {}, []);
 
   useEffect(() => {
@@ -43,14 +43,17 @@ const AdminLogin = () => {
     }
 
     if (step <= 1 && mutation.isSuccess === true) {
-      notifications("success", mutation?.data?.data?.message);
+      notifications(
+        "success",
+        mutation?.data?.data?.message || "Login Successful"
+      );
       setStep(step + 1);
       dispatch(saveToken(mutation?.data?.data?.data?.token));
       dispatch(checkIsAuth(true));
+      saveUserToken(mutation?.data?.data?.data?.token);
       setTimeout(() => {
         auth.isAuth && router.push("/admin/home");
       }, 2000);
-      console.log(mutation?.data?.data?.data?.token);
     }
   }, [mutation]);
 

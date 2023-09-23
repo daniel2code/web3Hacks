@@ -14,7 +14,7 @@ const Blog = () => {
 
   const { isLoading, isError, data, error, refetch } = useQuery(["posts"], () =>
     axios
-      .get("http://quiclet.urbandesignsco.com/api/articles/all",)
+      .get("https://api.dapplab.co/api/all",)
       .then((res) => res.data)
   );
 

@@ -3,13 +3,14 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
-import store, { persistor } from "../provider/store";
+import { persistor, store } from "../provider/store";
 import { QueryClient, QueryClientProvider } from "react-query";
 import Head from "next/head";
 import Script from "next/script";
 import "react-notifications-component/dist/theme.css";
 import { ReactNotifications } from "react-notifications-component";
 import * as gtag from "../utils/gtag";
+import "react-quill/dist/quill.snow.css";
 
 const queryClient = new QueryClient();
 
