@@ -5,7 +5,9 @@ import SecondaryCard from "../../../components/secondaryCard/sec";
 import { truncateText } from "../../../utils/trunczteText";
 
 const Popular = ({ data }) => {
-  const popData = data && data.length > 0 && data?.data[0];
+  const popData = data && data.length > 0 && data[0];
+
+  console.log(popData);
 
   return (
     <div className={`w-full flex justify-center py-[70px]`}>
@@ -21,7 +23,7 @@ const Popular = ({ data }) => {
           <div className={`lg:w-[55%] w-full`}>
             <div className="w-full">
               <Image
-                src={popData && popData?.images[0]?.url}
+                // src={popData && popData?.images[0]?.url}
                 width="100"
                 height="100"
                 className="w-full h-full object-contain aspect-auto"
@@ -44,10 +46,10 @@ const Popular = ({ data }) => {
             className={`lg:w-[45%] w-full mt-[50px] lg:mt-0 pl-[0px] lg:pl-[25px] border border-y-0 border-r-0 border-l-0 md:border-l-gray-400`}
           >
             <div className="flex flex-col gap-y-[20px] md:gap-y-[25px]">
-              { data.length > 0 ? (
+              {data?.length > 0 ? (
                 <>
-                  {data?.data.map((item) => {
-                    return <SecondaryCard data={item} />
+                  {data?.map((item) => {
+                    return <SecondaryCard data={item} />;
                   })}
                 </>
               ) : null}

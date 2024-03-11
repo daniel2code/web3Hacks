@@ -7,35 +7,36 @@ import { useQuery } from "react-query";
 import { updatePosts } from "../../../provider/slices/postsSlice";
 import axios from "axios";
 
+
 const Wrapper = ({ children }) => {
   const auth = useSelector((state) => state.auth);
   const posts = useSelector((state) => state.post.posts);
   const dispatch = useDispatch();
 
-  console.log(posts);
+  // console.log(posts);
 
   const router = useRouter();
   // !auth.isAuth && router.push("/admin/login");
 
-  const { isLoading, isError, isSuccess, data, error, refetch } = useQuery(
-    ["posts"],
-    () =>
-      axios
-        .get("https://api.dapplab.co/api/admin/articles", {
-          headers: {
-            Authorization: `Bearer ${auth.token}`,
-          },
-        })
-        .then((res) => {
-          console.log(res.data);
-        })
-  );
+  // const { isLoading, isError, isSuccess, data, error, refetch } = useQuery(
+  //   ["posts"],
+  //   () =>
+  //     axios
+  //       .get("https://api.dapplab.co/api/admin/articles", {
+  //         headers: {
+  //           Authorization: `Bearer ${auth.token}`,
+  //         },
+  //       })
+  //       .then((res) => {
+  //         console.log(res.data);
+  //       })
+  // );
 
-  useEffect(() => {
-    if (!posts) {
-      dispatch(updatePosts(data));
-    }
-  }, [data]);
+  // useEffect(() => {
+  //   if (!posts) {
+  //     dispatch(updatePosts(data));
+  //   }
+  // }, [data]);
 
   return (
     <>

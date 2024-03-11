@@ -8,7 +8,7 @@ const initialState = {
   status: null,
 };
 
-export const fetchEvents = createAsyncThunk(
+export const fetchAdminTuts = createAsyncThunk(
   "fetch-tutorial",
 
   async (param, thunkAPI) => {
@@ -23,8 +23,8 @@ export const fetchEvents = createAsyncThunk(
   }
 );
 
-export const fetchEventsSlice = createSlice({
-  name: "fetchEvents",
+export const fetchAdminTutsSlice = createSlice({
+  name: "fetchAdminTuts",
   initialState,
   reducers: {
     clearError: (state) => {
@@ -34,16 +34,16 @@ export const fetchEventsSlice = createSlice({
 
   extraReducers: (builder) => {
     builder
-      .addCase(fetchEvents.pending, (state) => {
+      .addCase(fetchAdminTuts.pending, (state) => {
         state.status = "loading";
         state.loading = true;
       })
-      .addCase(fetchEvents.fulfilled, (state, action) => {
+      .addCase(fetchAdminTuts.fulfilled, (state, action) => {
         state.status = "succeeded";
         state.data = action.payload?.data;
         state.loading = false;
       })
-      .addCase(fetchEvents.rejected, (state, action) => {
+      .addCase(fetchAdminTuts.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.payload;
         state.loading = false;
@@ -51,5 +51,5 @@ export const fetchEventsSlice = createSlice({
   },
 });
 
-export const { clearError } = fetchEventsSlice.actions;
-export default fetchEventsSlice.reducer;
+export const { clearError } = fetchAdminTutsSlice.actions;
+export default fetchAdminTutsSlice.reducer;

@@ -115,11 +115,47 @@ a {
   padding: 30px 20px;
 }
 
+.auth-bg {
+  /* width: 100%; */
+  /* height: 100vh; */
+  background-image: url("../assets/hero1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: multiply;
+}
+
+.tab-box {
+  box-shadow: inset 0 -0.5px 0 #f2f2f2;
+  /* padding-bottom: 10px; */
+}
+
+.main-tab {
+  /* border-bottom: 1px solid ; */
+  /* padding-bottom: 10px; */
+}
+
 @keyframes lds-dual-ring {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+.error-text {
+  color: #e20010;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* Add this to your existing styles */
+@media screen and (max-width: 640px) {
+  .overflow-auto {
+    -webkit-overflow-scrolling: touch;
   }
 }

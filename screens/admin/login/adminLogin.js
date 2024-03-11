@@ -22,7 +22,7 @@ const AdminLogin = () => {
   };
 
   const mutation = useMutation((newTodo) => {
-    return axios.post("https://api.dapplab.co/api/admin/login", newTodo);
+    return axios.post("https://api.dapplab.co/api/admin/login", newTodo)
   });
 
   async function handleSubmit(e) {

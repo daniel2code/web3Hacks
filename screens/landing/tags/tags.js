@@ -31,7 +31,7 @@ const Tags = () => {
           </h2>
         </div>
 
-        <div className="w-full flex flex-wrap justify-center mb-[20px] mt-[60px]">
+        <div className="w-full flex flex-wrap gap-x-[15px] justify-center mb-[20px] mt-[60px]">
           {categoryTags.map((item, i) => {
             return <TagCard text={item} key={i} />;
           })}

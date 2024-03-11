@@ -1,7 +1,7 @@
 import React from "react";
 import PrimaryCard from "../../../components/primaryCard/primary";
 
-const Trends = () => {
+const Trends = ({ data }) => {
   return (
     <div className="py-[50px] ">
       <div className="w-full flex justify-center">
@@ -19,8 +19,8 @@ const Trends = () => {
 
       <div className="w-full mt-6">
         <div className="flex gap-x-[15px] w-[100%] overflow-x-scroll px-[5%] lg:px-0 scroll-style">
-          {[...Array(8)].map((item) => {
-            return <PrimaryCard />;
+          {data?.map((item) => {
+            return <PrimaryCard data={item} />;
           })}
         </div>
       </div>

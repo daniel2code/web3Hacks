@@ -57,6 +57,13 @@ import updateTutSlice from "./slices/tutPost/updateTut";
 import fetchTutSlice from "./slices/tutPost/fetchTut";
 import deleteTutSlice from "./slices/tutPost/deleteTut";
 import updateAdsSlice from "./slices/ads/updateAds";
+import publistPostSlice from "./slices/posts/publistPost";
+import fetchPublicPostSlice from "./slices/posts/fetchPublicPosts"
+import loginSlice from "./slices/auth/loginSlice";
+import signupSlice from "./slices/auth/signupSlice"
+import verifyOtpSlice from "./slices/auth/verifyOtp";
+import resetPasswordSlice from "./slices/auth/resetpasswordSlice"
+import publishTutSlice from "./slices/tutPost/publishTut";
 
 const persistConfig = {
   key: "root",
@@ -84,12 +91,27 @@ const rootReducer = combineReducers({
   fetchTut: fetchTutSlice,
   deleteTut: deleteTutSlice,
   updateAds: updateAdsSlice,
+  publishPost: publistPostSlice,
+  publicPost: fetchPublicPostSlice,
+  login: loginSlice,
+  signup: signupSlice,
+  verifyOtp: verifyOtpSlice,
+  resetPassword: resetPasswordSlice,
+  publishTut: publishTutSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
   reducer: persistedReducer,
+  // middleware: (getDefaultMiddleware) =>
+  // getDefaultMiddleware({
+  //   serializableCheck: {
+  //     ignoredActions: ['YOUR_ACTION_WITH_NON_SERIALIZABLE_VALUE'],
+  //     // Or to ignore these checks entirely (not recommended):
+  //     // serializableCheck: false,
+  //   },
+  // }),
 });
 
 const persistor = persistStore(store);

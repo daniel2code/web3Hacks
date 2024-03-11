@@ -1,12 +1,17 @@
 import React from "react";
 
-const TagCard = ({ text }) => {
+const TagCard = React.forwardRef(({ text, color, onClick, ref }) => {
   return (
-    <div className="w-fit rounded px-[15px] py-[5px] border border-[#ff5f13] bg-[#ff5f1330] mx-[10px] my-[10px]">
+    <div
+      ref={ref}
+      onClick={onClick}
+      style={{ backgroundColor: color }}
+      className="w-fit rounded-[6px] cursor-pointer px-[15px] py-[5px] border border-[#ff5f13] bg-[#ff5f1320] hover:bg-[#ff5f13] text-[15px] my-[10px]"
+    >
       {" "}
       <p className="text-[#ffffff]">{text}</p>{" "}
     </div>
   );
-};
+});
 
 export default TagCard;

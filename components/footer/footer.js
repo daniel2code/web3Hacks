@@ -22,8 +22,8 @@ const Footer = () => {
               />
             </div>
 
-            <div className="w-full flex mt-[30px] grid-x-[5%] justify-between">
-              <p className="text-[14px] text-white w-[50%] font-[400]">
+            <div className="w-full flex mt-[30px] gap-[5%] lg:flex-row flex-col grid-x-[5%] justify-between">
+              <p className="text-[14px] text-white lg:w-[50%] w-full font-[400]">
                 Dapplapxs.co is a free aggregator for crypto airdrops such as
                 updating (node, testnet, betanet, and mainnet) airdrops
                 Including product promotion and community events highlights.
@@ -35,8 +35,8 @@ const Footer = () => {
                 safe!. Follow Dapplapxs guide to stay safe for more information.
               </p>
 
-              <form className="">
-                <div className="flex items-center gap-x-3">
+              <form className="mt-[30px] w-full lg:w-[50%] lg:mt-0">
+                <div className="flex items-center gap-x-3 w-full">
                   <input
                     placeholder="Your E-Mail"
                     className="h-[40px] w-[100%] bg-white max-w-[300px] border border-gray-300 rounded pl-4"
@@ -55,8 +55,8 @@ const Footer = () => {
           </div>
 
           <div className=" mt-[40px] pt-[40px] border border-gray-200 border-x-0 border-b-0 w-full lg:flex-row flex-col gap-y-[30px]">
-            <div className=" w-full flex gap-x-[10%]">
-              <div className="flex w-[30%] justify-between mt-[10px] ">
+            <div className=" w-full max-[550px]:flex-col gap-y-[20px] flex gap-x-[10%]">
+              <div className="flex lg:w-[30%] gap-x-[10px] w-[48%] max-[650px]:flex-col max-[650px]:gap-y-[20px] justify-between mt-[10px] ">
                 <ul className={`flex gap-4 flex-col`}>
                   <h2 className="text-[21px] font-[600] mb-[15px]">
                     Categories
@@ -104,43 +104,43 @@ const Footer = () => {
                   <h2 className="text-[21px] font-[600] mb-[15px]">Donate</h2>
 
                   <li className="flex gap-x-[15px]">
-                    <p className="text-[16px] font-[600] flex items-center">
-                      ETH:{" "}
-                      <span className="bg-[#fafafa4d] px-[7px] py-[3px] ml-[10px] text-[12px] font-[300] rounded-[5px] ">
+                    <p className="sm:text-[16px] text-[14px] max-[400px]:flex-col max-[400px]:items-start font-[600] flex items-center">
+                      ETH:
+                      <span className="bg-[#fafafa4d] px-[7px] py-[3px] min-[400px]:ml-[10px] max-[400px]:text-[11px] text-[12px] font-[300] rounded-[5px] ">
                         0x7dEaCb1d403928D9FEd7c11B1888849533CAac67
                       </span>
                     </p>
                   </li>
 
                   <li className="flex gap-x-[15px]">
-                    <p className="text-[16px] font-[600] flex items-center">
+                    <p className="sm:text-[16px] text-[14px] max-[400px]:flex-col max-[400px]:items-start font-[600] flex items-center">
                       BNB:{" "}
-                      <span className="bg-[#fafafa4d] px-[7px] py-[3px] ml-[10px] text-[12px] font-[300] rounded-[5px] ">
+                      <span className="bg-[#fafafa4d] px-[7px] py-[3px] min-[400px]:ml-[10px] max-[400px]:text-[11px] text-[12px] font-[300] rounded-[5px] ">
                         0x7dEaCb1d403928D9FEd7c11B1888849533CAac67
                       </span>
                     </p>
                   </li>
 
                   <li className="flex gap-x-[15px]">
-                    <p className="text-[16px] font-[600] flex items-center">
+                    <p className="sm:text-[16px] text-[14px] max-[400px]:flex-col max-[400px]:items-start font-[600] flex items-center">
                       MATIC:{" "}
-                      <span className="bg-[#fafafa4d] px-[7px] py-[3px] ml-[10px] text-[12px] font-[300] rounded-[5px] ">
+                      <span className="bg-[#fafafa4d] px-[7px] py-[3px] min-[400px]:ml-[10px] max-[400px]:text-[11px] text-[12px] font-[300] rounded-[5px] ">
                         0x7dEaCb1d403928D9FEd7c11B1888849533CAac67
                       </span>
                     </p>
                   </li>
 
                   <li className="flex gap-x-[15px]">
-                    <p className="text-[16px] font-[600] flex items-center">
+                    <p className="sm:text-[16px] text-[14px] max-[400px]:flex-col max-[400px]:items-start font-[600] flex items-center">
                       LTC:{" "}
-                      <span className="bg-[#fafafa4d] px-[7px] py-[3px] ml-[10px] text-[12px] font-[300] rounded-[5px] ">
+                      <span className="bg-[#fafafa4d] px-[7px] py-[3px] min-[400px]:ml-[10px] max-[400px]:text-[11px] text-[12px] font-[300] rounded-[5px] ">
                         0x7dEaCb1d403928D9FEd7c11B1888849533CAac67
                       </span>
                     </p>
                   </li>
                 </ul>
 
-                <ul className={`flex gap-4 flex-col ml-[4%] `}>
+                <ul className={`gap-4 hidden lg:flex flex-col ml-[4%] `}>
                   <h2 className="text-[21px] font-[600] mb-[15px]">
                     Blockchain Education
                   </h2>
@@ -206,19 +206,19 @@ const Footer = () => {
         className={`w-full flex justify-center py-[30px] bg-[#232d3660] mt-[80px] `}
       >
         <div className={`lg:w-[75%] max-w-[1300px] px-[5%] lg:px-0`}>
-          <div className="flex justify-between">
+          <div className="flex justify-between md:flex-row flex-col-reverse gap-y-[15px] ">
             <p>&copy; Copyright {year}. All Rights Reserved</p>
 
             <ul className={`flex gap-x-[20px] `}>
-              <li className={`text-white cursor-pointer hover:underline`}>
+              <li className={`text-[#ffffff99] cursor-pointer hover:underline`}>
                 Terms
               </li>
 
-              <li className={`text-white cursor-pointer hover:underline`}>
+              <li className={`text-[#ffffff99] cursor-pointer hover:underline`}>
                 Privacy & Policy
               </li>
 
-              <li className={`text-white cursor-pointer hover:underline`}>
+              <li className={`text-[#ffffff99] cursor-pointer hover:underline`}>
                 Safe Guide
               </li>
             </ul>

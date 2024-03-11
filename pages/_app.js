@@ -11,6 +11,7 @@ import "react-notifications-component/dist/theme.css";
 import { ReactNotifications } from "react-notifications-component";
 import * as gtag from "../utils/gtag";
 import "react-quill/dist/quill.snow.css";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const queryClient = new QueryClient();
 

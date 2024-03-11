@@ -11,9 +11,9 @@ const initialState = {
 export const fetchBlogPosts = createAsyncThunk(
   "fetch-posts",
 
-  async (param, thunkAPI) => {
+  async ({ url }, thunkAPI) => {
     try {
-      const response = await API.get(`/admin/articles`);
+      const response = await API.get(url);
 
       return response?.data;
     } catch (err) {

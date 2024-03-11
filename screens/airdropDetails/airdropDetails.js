@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./details.module.css";
 import Navbar from "../../components/navbar/navbar";
 import Footer from "../../components/footer/footer";
@@ -13,11 +13,13 @@ import {
   BsReddit,
   BsMedium,
 } from "react-icons/bs";
-import { BiLinkExternal } from "react-icons/bi";
+import Review from "../../components/review/review";
 import { AiFillMinusCircle } from "react-icons/ai";
 import { GrMail } from "react-icons/gr";
 
 const AirdropDetails = () => {
+  const [rating, setRating] = useState(1);
+
   return (
     <div className="w-full bg-[#181d20]">
       <Navbar bg={true} />
@@ -201,6 +203,29 @@ const AirdropDetails = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div className="border border-[#c2c3c730] flex flex-col py-[20px] px-[4%] my-[20px]">
+            <p className="text-[30px] text-[#fff]">Review Project</p>
+
+            <div className="mt-[30px] w-full">
+              <Review rating={rating} setRating={setRating} />
+            </div>
+
+            <div className="w-full mt-[20px]">
+              <textarea
+                className="w-full sm:w-full bg-transparent border border-[#f2f3f860] py-[10px] px-3 text-[#fff] placeholder-[#9b9b9b]"
+                type="text"
+                placeholder="Write your a review"
+                rows="5"
+              />
+            </div>
+
+            <div className="w-full mt-[20px] flex justify-end">
+              <button className="bg-[#ff5f13] w-[230px] h-[50px] font-bold text-white flex items-center gap-x-[15px] justify-center">
+                Submit review
+              </button>
             </div>
           </div>
         </div>

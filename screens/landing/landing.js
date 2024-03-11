@@ -11,26 +11,25 @@ import Footer from "../../components/footer/footer";
 import TopCarousel from "../../components/TopBarCarousel/topCarousel";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPublicBlogPosts } from "../../provider/slices/posts/fetchPublicPosts";
+import { GetServerSideProps } from "next";
+import { API } from "../../utils/axiosConfig";
 
 const Landing = () => {
   const dispatch = useDispatch();
-  const { data } = useSelector((state) => state.fetchPost);
+  const { data } = useSelector((state) => state.publicPost);
 
-  console.log(
-    data,
-    "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo"
-  );
+  console.log(data);
 
   useEffect(() => {
-    dispatch(fetchPublicBlogPosts());
+    dispatch(fetchPublicBlogPosts({ url: "/articles/all" }));
   }, []);
 
   return (
     <div className="bg-[#181d20]">
-      <TopCarousel />
+      {/* <TopCarousel /> */}
       <Hero />
-      <Popular data={data} />
-      <Trends />
+      <Popular data={data?.latest_articles} />
+      <Trends data={data?.latest_articles} />
       <Airdrop />
       <Events />
       <Tags />
@@ -40,5 +39,13 @@ const Landing = () => {
     </div>
   );
 };
+
+// export async function getServerSideProps() {
+//   // Fetch data from external API
+//   const res = await fetch("https://api.github.com/repos/vercel/next.js");
+//   const repo = await res.json();
+//   // Pass data to the page via props
+//   return { props: { repo: repo } };
+// }
 
 export default Landing;

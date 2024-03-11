@@ -12,7 +12,7 @@ export const createBlogPost = createAsyncThunk(
   "create-post",
 
   async (param, thunkAPI) => {
-    const { notifications, title, content, description, category_id, image } =
+    const { notifications, title, content, description, category_id, image, cb } =
       param;
 
     const payload = {
@@ -27,6 +27,8 @@ export const createBlogPost = createAsyncThunk(
       const response = await API.post(`/admin/articles/create`, payload);
 
       notifications("success", "Article published successfully");
+
+      cb()
       return response?.data;
     } catch (err) {
 

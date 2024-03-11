@@ -4,7 +4,7 @@ import { BsShare, BsFolder2Open } from "react-icons/bs";
 import { useSelector, useDispatch } from "react-redux";
 
 const PostCard = ({ hideBorder }) => {
-  const view = useSelector((state) => state.reducer.view.view);
+  const view = useSelector((state) => state.reducer?.view?.view);
 
   const checkView = view === "list";
 

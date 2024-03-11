@@ -8,12 +8,12 @@ const Sidebar = () => {
   const pageLinks = [
     { name: "Home", link: "/admin/home", id: 1 },
     { name: "Write a Post", link: "/admin/write", id: 2 },
-    { name: "Create Airdrop", link: "/admin/create-airdrop", id: 3 },
-    { name: "Create Event", link: "/admin/event", id: 4 },
+    // { name: "Create Airdrop", link: "/admin/create-airdrop", id: 3 },
+    // { name: "Create Event", link: "/admin/event", id: 4 },
     { name: "Create Ads", link: "/admin/ads", id: 5 },
     { name: "Manage Airdrops", link: "/admin/manage-airdrops", id: 6 },
     { name: "Manage Articles", link: "/admin/manage", id: 7 },
-    { name: "Manage Event", link: "/admin/manage-event", id: 8 },
+    // { name: "Manage Event", link: "/admin/manage-event", id: 8 },
     { name: "Manage Ads", link: "/admin/manage-ads", id: 9 },
   ];
 
